@@ -1,4 +1,4 @@
-// El principal objetivo de este desafío es fortalecer tus habilidades en lógica de programación. Aquí deberás desarrollar la lógica para resolver el problema.
+// Variables
 let amigos = [];
 let amigoSecreto = '';
 
@@ -9,21 +9,19 @@ function agregarAmigo() {
     if (!inputAmigo) {
         alert('Debe ingresar un amigo');
     } else {
+        //Agrega amigo al array, muestra el array en lista html y limpia el input con el nombre.
         amigos.push(inputAmigo);
-        //console.log(amigos);
         asignarAmigoLista();
         limpiarInput();
     }
 }
 
+//Limpia el nombre del amigo ingresado.
 function limpiarInput() {
     document.getElementById('amigo').value = '';
 }
 
-function mostrarAmigos() {
-    document.querySelector('#listaAmigos')
-}
-
+//Muestra el array en la lista html.
 function asignarAmigoLista() {
     let lista = document.getElementById('listaAmigos');
     lista.innerHTML = '';
@@ -35,12 +33,15 @@ function asignarAmigoLista() {
     }
 }
 
+//Obtiene un amigo aleatorio del array.
 function obtenerAmigoSecreto() {
-    amigoSecreto = amigos[Math.floor( Math.random() * amigos.length)];
+    amigoSecreto = amigos[Math.floor(Math.random() * amigos.length)];
     return amigoSecreto;
 }
 
+//Muestra el amigo secreto en el html.
 function sortearAmigo() {
+    //Comprueba si el array tiene al menos 2 amigos.
     if (amigos.length < 2) {
         alert('Ingresa 2 o mas amigos para poder sortear');
     } else { 
